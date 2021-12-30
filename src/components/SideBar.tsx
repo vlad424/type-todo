@@ -9,7 +9,7 @@ const SideBar: React.FC = () => {
     <div className="side_bar">
 			<span className="title">Ваши задачи</span>
       {posts.map((post) => (
-        <span className="left_task" key={post.id.toString()}>
+        <span className="left_task" key={post.id.toString() + "_sideBar"}>
           {post.content}
         </span>
       ))}

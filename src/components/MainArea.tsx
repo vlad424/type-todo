@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PostType } from "../types/types";
-import Modal from "./modal/Modal";
+import DeletePost from "./buttons/DeletePost";
+import EditPost from "./buttons/EditPost";
 
 const MainArea: React.FC = () => {
   const date: any = new Date();
@@ -23,19 +24,33 @@ const MainArea: React.FC = () => {
     <div className="tasks_area">
       <span className="title">
         {days[date.getDay()] + ", " + date.getDay()} Декабря
-        <button className="modal_btn" onClick={ () =>console.log("its side menu (r)")}> + </button>
+        <button
+          className="modal_btn"
+          onClick={() => console.log("its side menu (r)")}
+        > +
+        </button>
       </span>
 
-      <div className="posts">
+      <div className="tasks">
         {posts.length ? (
-          posts.map((post) => <span>{post.content}</span>)
+          posts.map((post) => (
+            <div className="task">
+              <span key={post.id.toString() + "_main"}>{post.content}</span>
+              <div className="post_btns">
+                <EditPost/>
+                <DeletePost/>
+              </div>
+            </div>
+          ))
         ) : (
           <span>На сегодня дела отсутствуют</span>
         )}
-        <button className="modal_btn" onClick={() => console.log("its modal menu")}>
-          +
-        </button>
       </div>
+      <button
+        className="modal_btn"
+        onClick={() => console.log("its modal menu")}
+      > +
+      </button>
     </div>
   );
 };

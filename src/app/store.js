@@ -8,6 +8,6 @@ const rootReducer = combineReducers({
     modal_reducer
 });
 
-const store = createStore(rootReducer,  initialState );
+const store = createStore(rootReducer, initialState);
 
 export default store;

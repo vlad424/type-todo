@@ -24,13 +24,27 @@ body {
   flex-basis: 85vw;
   flex-direction: column;
 }
-.posts {
+.tasks {
   display: flex;
   flex-direction: column;
   flex-basis: 100vh;
   margin-left: 0.5vw;
 }
-
+.task {
+  margin-top: 10px;
+  width: 40vw;
+  height: 3.5vh;
+  border: 2px solid grey;
+  border-radius: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+.task:hover {
+  border: 2px solid #fff;
+}
 .title {
   display: flex;
   font-size: 24px;
@@ -52,4 +66,6 @@ body {
     border-radius: 20px;
     background-color: #fff;
     cursor: pointer;
+    margin-left: 0.5vw;
+    margin-top: 0.5vh;
 }
