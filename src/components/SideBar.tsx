@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { PostType } from "../types/types";
 
 const SideBar: React.FC = () => {
-  const posts: Array<PostType> = useSelector((state: any) => state.posts);
+  const posts: Array<PostType> = useSelector((state: any) => state.post_reducer.posts);
 
   return (
     <div className="side_bar">

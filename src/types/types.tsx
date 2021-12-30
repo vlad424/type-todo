@@ -9,5 +9,9 @@ interface AddPostAction {
   type: string;
   payload: object;
 }
+interface SetModalActive {
+  type: string;
+  payload: boolean;
+}
 
-export type TodoActions = AddPostAction
+export type TodoActions = AddPostAction | SetModalActive

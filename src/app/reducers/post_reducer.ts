@@ -1,4 +1,4 @@
-import { ReduxStateTypes, TodoActions } from "../types/types";
+import { ReduxStateTypes, TodoActions } from "../../types/types";
 
 export const initialState: ReduxStateTypes = {
   posts: [
@@ -9,7 +9,7 @@ export const initialState: ReduxStateTypes = {
 
 const ADD_POST = "ADD_POST";
 
-export const reducer = (state = initialState, action: TodoActions) => {
+export const post_reducer = (state = initialState, action: TodoActions) => {
   switch (action.type) {
     case ADD_POST:
       return { ...state, posts: [...state.posts, action.payload] };
