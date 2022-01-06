@@ -11,7 +11,7 @@
     transform: scale(0)
 }
 .modal.active {
-    transform: scale(1);
+    transform: scale(0);
 }
 
 .modal_content {
@@ -28,11 +28,11 @@
     color: black;
 }
 
-.modal_content input {
+.modal_input {
     width: 160px;
     height: 25px;
     background-color: #28282A;
-    color: #fff;
+    color: white;
     padding: 5px;
     border-radius: 20px;
 }
