@@ -1,5 +1,6 @@
 import MainArea from './components/MainArea';
 import Modal from './components/modal/Modal';
+import ModalEdit from './components/edit_modal/ModalEdit'
 import SideBar from './components/SideBar';
 import './styles/app.css'
 
@@ -17,6 +18,7 @@ function App() {
         </div>
       </div>
       <Modal/>
+      <ModalEdit/>
     </div>
   );
 }

@@ -6,13 +6,14 @@ const EDIT_POST = "EDIT_POST"
 
 export const initialState: ReduxStateTypes = {
   posts: [
-    { content: "test", id: 0 },
-    { content: "test1", id: 1 },
-    { content: "test1", id: 2 },
-    { content: "test1", id: 3 },
-    { content: "test1", id: 4 },
+    { content: "1", id: 0 },
+    { content: "2", id: 1 },
+    { content: "3", id: 2 },
+    { content: "4", id: 3 },
+    { content: "5", id: 4 },
   ],
   modal_active: false,
+  modal_edit_active: false
 };
 
 export const post_reducer = (state = initialState, action: TodoActions) => {
@@ -20,7 +21,18 @@ export const post_reducer = (state = initialState, action: TodoActions) => {
     case ADD_POST:
       return { ...state, posts: [...state.posts, action.payload] };
     case DELETE_POST:
-      return {...state, posts: [state.posts.filter((post) => post.id == action.payload)]}
+      return {...state, posts: [...state.posts.filter((post) => post.id !== action.payload)]}
+    case EDIT_POST:
+      return {
+        ...state,
+        posts: state.posts.map((post) => {
+          if (post.id === action.payload) {
+            return { ...post, content: action.payload };
+          } else {
+            return post;
+          }
+        }),
+      };    
     default:
       return state;
   }
