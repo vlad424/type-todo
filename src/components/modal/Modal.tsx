@@ -1,19 +1,22 @@
-import  React,{ useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import './modal.css'
+import "./modal.css";
 
 const Modal: React.FC = () => {
-	const posts = useSelector((state:any) => state.post_reducer.posts)
-	var active:boolean = useSelector((state:any) => state.modal_reducer.active)
-	const dispatch = useDispatch()
-	const [post ,setPost] = useState({})
+  const posts = useSelector((state: any) => state.post_reducer.posts);
+  var active: boolean = useSelector((state: any) => state.modal_reducer.active);
+  const dispatch = useDispatch();
+  const [post, setPost] = useState({});
 
-	const handleInput = (post:object) => {
-		dispatch( {type: "ADD_POST", payload: post} )
-}
+  const handleInput = (post: object) => {
+    dispatch({ type: "ADD_POST", payload: post });
+  };
 
   return (
-    <div className={active ? "modal active" : "modal"} onClick={() => active = false}>
+    <div
+      className={active ? "modal active" : "modal"}
+      onClick={() => (active = false)}
+    >
       <div className="modal_content" onClick={(e) => e.stopPropagation()}>
         <input
           type="text"
