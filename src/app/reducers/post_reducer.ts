@@ -20,7 +20,7 @@ export const initialState: ReduxStateTypes = {
 export const post_reducer = (state = initialState, action: TodoActions) => {
   switch (action.type) {
     case ADD_POST:
-      return { ...state, posts: [...state.posts, action.payload.content]};
+      return { ...state, posts: [...state.posts, action.payload]};
     case DELETE_POST:
       return {...state, posts: [...state.posts.filter((post) => post.id !== action.payload)]}
     case EDIT_POST:

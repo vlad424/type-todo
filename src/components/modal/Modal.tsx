@@ -11,7 +11,7 @@ const Modal: React.FC = () => {
 
   const handleInput = (post: PostType) => {
     ++id
-    dispatch({ type: "ADD_POST", payload: {post, id}});
+    dispatch({ type: "ADD_POST", payload: {...post, id}});
   };
   
   return (
