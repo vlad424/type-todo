@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PostType, ReduxStateTypes } from "../types/types";
+import { PostType} from "../types/types";
 
 const MainArea: React.FC = () => {
   const date: any = new Date();
@@ -35,9 +35,9 @@ const MainArea: React.FC = () => {
 
       <div className="tasks">
         {posts.length ? (
-          posts.map((post, index) => (
+          posts.map((post) => (
             <div className="task">
-              <span key={index}>{post.content}</span>
+              <span key={post.id.toString() + "_main"}>{post.content}</span>
               <div className="post_btns">
                 <button
                   className="edit_btn"
@@ -45,6 +45,7 @@ const MainArea: React.FC = () => {
                   style={{ marginRight: "5px" }}
                 >
                   <img
+                    alt="ups..."
                     src="https://img.icons8.com/fluency-systems-regular/50/000000/edit.png"
                     style={{ width: "20px", height: "20px", cursor: "pointer" }}
                   />
@@ -56,6 +57,7 @@ const MainArea: React.FC = () => {
                   }
                 >
                   <img
+                    alt="ups..."
                     src="https://img.icons8.com/material-outlined/24/000000/delete-view.png"
                     style={{ width: "20px", height: "20px", cursor: "pointer" }}
                   />

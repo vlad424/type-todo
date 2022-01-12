@@ -1,4 +1,4 @@
-import { PostType, ReduxStateTypes, TodoActions } from "../../types/types";
+import { ReduxStateTypes, TodoActions } from "../../types/types";
 
 const ADD_POST = "ADD_POST";
 const DELETE_POST = "DELETE_POST";
