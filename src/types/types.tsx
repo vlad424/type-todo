@@ -2,15 +2,17 @@ export interface PostType {
   content: string;
   id: number;
 }
-interface PayloadEditPost {
-  id: number;
-  content: string;
-}
-export interface ModalActive {
+interface PayloadEditModal {
   active: boolean;
+  id: number;
+}
+interface PayloadEditPost {
+  content: string;
+  id: number;
 }
 export interface ReduxStateTypes {
   posts: PostType[];
+  cache_id: number;
   modal_active: boolean;
   modal_edit_active: boolean;
 }
@@ -22,9 +24,13 @@ interface DeletePostAction {
   type: string;
   payload: number;
 }
+export interface EditModal {
+  type: string;
+  payload: PayloadEditModal;
+}
 interface EditPostAction {
   type: string;
-  payload: PayloadEditPost;
+  payload: any;
 }
 interface SetModalActive {
   type: string;

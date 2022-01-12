@@ -1,8 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PostType, ReduxStateTypes } from "../types/types";
-import DeletePost from "./buttons/DeletePost";
-import EditPost from "./buttons/EditPost";
 
 const MainArea: React.FC = () => {
   const date: any = new Date();
@@ -19,8 +17,8 @@ const MainArea: React.FC = () => {
     (state: any) => state.post_reducer.posts
   );
   const dispatch = useDispatch();
-  const handleButton = () => {
-    dispatch({type: "EDIT_POST", payload: days})
+  const handleButton = (post:PostType) => {
+    dispatch({ type: "SET_ACTIVE_EDIT", payload: {active: true , id: post.id} })
   }
   return (
     <div className="tasks_area">
@@ -43,7 +41,7 @@ const MainArea: React.FC = () => {
               <div className="post_btns">
                 <button
                   className="edit_btn"
-                  onClick={() => dispatch({ type: "SET_ACTIVE_EDIT", payload: true })}
+                  onClick={() => handleButton(post)}
                   style={{ marginRight: "5px" }}
                 >
                   <img

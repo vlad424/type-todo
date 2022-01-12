@@ -4,15 +4,16 @@ import { PostType } from "../../types/types";
 import "./modal.css";
 
 const Modal: React.FC = () => {
-  var id = 4;
-  const [post, setPost] = useState<PostType>({content: "", id: ++id});
+  var id = 5;
+  const [post, setPost] = useState<PostType>({content: "", id: id});
   const active = useSelector((state: any) => state.modal_reducer.modal_active);
   const dispatch = useDispatch();
 
   const handleInput = (post: PostType) => {
-    dispatch({ type: "ADD_POST", payload: post});
+    ++id
+    dispatch({ type: "ADD_POST", payload: {post, id}});
   };
-
+  
   return (
     <div
       className={active ? "modal active" : "modal"}
