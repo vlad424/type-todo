@@ -17,20 +17,16 @@
 .modal_content {
     padding: 20px;
     border-radius: 20px;
-    background-color: #000;
+    background-color: #fff;
     height: 350px;
     width: 450px;  
-    color: #fff; 
+    color: black; 
+}
+.modal_content input {
+    display: flex;
+    flex-direction: column;
 }
 
-.modal_input {
-    width: 160px;
-    height: 25px;
-    background-color: #28282A;
-    color: white;
-    padding: 5px;
-    border-radius: 20px;
-}
 .modal_content button {
     margin-top: 5px;
     width: 25px;

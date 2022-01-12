@@ -8,13 +8,15 @@ const SideBar: React.FC = () => {
   return (
     <div className="side_bar">
 			<span className="title">Ваши задачи</span>
-      {posts.map((post) => (
-        <span className="left_task" key={post.id.toString() + "_sideBar"}>
+      {posts.map((post, index) => (
+        <span className="left_task" key={index}>
           {post.content}
         </span>
       ))}
     </div>
   );
 };
+
+//post.id.toString() + "_sideBar"
 
 export default SideBar;
