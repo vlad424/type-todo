@@ -13,7 +13,7 @@ const Modal: React.FC = () => {
     ++id
     dispatch({ type: "ADD_POST", payload: {...post, id}});
   };
-  
+
   return (
     <div
       className={active ? "modal active" : "modal"}
