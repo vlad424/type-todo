@@ -3,6 +3,7 @@ import { ReduxStateTypes, TodoActions } from "../../types/types";
 const ADD_POST = "ADD_POST";
 const DELETE_POST = "DELETE_POST";
 const EDIT_POST = "EDIT_POST"
+const STORAGE_PUSH = "STORAGE_PUSH"
 
 export const initialState: ReduxStateTypes = {
   posts: [
@@ -34,6 +35,8 @@ export const post_reducer = (state = initialState, action: TodoActions) => {
           }
         }),
       };    
+    case STORAGE_PUSH:
+      return {...state, posts: [action.payload]}
     default:
       return state;
   }

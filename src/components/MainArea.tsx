@@ -26,7 +26,7 @@ const MainArea: React.FC = () => {
         {days[date.getDay()] + ", " + date.getDate()} Декабря
         <button
           className="modal_btn"
-          onClick={() => console.log("its side menu (r)")}
+          onClick={() => localStorage.setItem('posts',JSON.stringify(posts))}
         >
           {" "}
           +
