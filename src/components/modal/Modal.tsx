@@ -1,7 +1,3 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { PostType } from "../../types/types";
-import "./modal.css";
 
 const Modal: React.FC = () => {
   var id = 4;
